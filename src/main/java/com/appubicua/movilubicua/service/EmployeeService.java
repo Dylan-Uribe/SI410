@@ -7,7 +7,6 @@ public interface EmployeeService {
     EmployeeDto addEmployee(EmployeeDto employeeDto);
     EmployeeDto findById(Long id);
     List<EmployeeDto> findAll();
-    /*List<EmployeeDto> findAll();
-    EmployeeDto update(EmployeeDto employeeDto, long Id);
-    void delete(Long id);*/
+    void delete(Long id);
+    /* EmployeeDto update(EmployeeDto employeeDto, long Id);*/
 }

@@ -36,4 +36,9 @@ public class EmployeeServiceImplement implements EmployeeService {
     public List<EmployeeDto> findAll() {
         return EmployeeMapper.toEmployeeDtoList(employeeRepository.findAll());
     }
+
+    @Override
+    public void delete(Long id) {
+        employeeRepository.deleteById(id);
+    }
 }
