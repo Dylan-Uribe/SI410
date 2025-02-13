@@ -41,4 +41,16 @@ public class EmployeeServiceImplement implements EmployeeService {
     public void delete(Long id) {
         employeeRepository.deleteById(id);
     }
+
+    @Override
+    public EmployeeDto update(EmployeeDto employeeDto, long id) {
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not found"));
+
+        employee.setFirstName(employeeDto.getFirstName());
+        employee.setLastName(employeeDto.getLastName());
+        employee.setEmail(employeeDto.getEmail());
+
+        return EmployeeMapper.toEmployeeDto(employeeRepository.save(employee));
+    }
 }

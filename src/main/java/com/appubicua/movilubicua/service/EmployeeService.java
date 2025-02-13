@@ -8,5 +8,5 @@ public interface EmployeeService {
     EmployeeDto findById(Long id);
     List<EmployeeDto> findAll();
     void delete(Long id);
-    /* EmployeeDto update(EmployeeDto employeeDto, long Id);*/
+    EmployeeDto update(EmployeeDto employeeDto, long Id);
 }
